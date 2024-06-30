@@ -14,7 +14,7 @@ async function authenticate(username, password) {
     const user = await res.json();
     return user;
   }
-  throw new Error('Authentication failed');
+  throw new Error('Fallo en la autenticación');
 }
 
 export default function Login() {
@@ -34,7 +34,7 @@ export default function Login() {
       localStorage.setItem('user', JSON.stringify(user));
       router.push('/home');
     } catch (err) {
-      setError('Invalid username or password');
+      setError('Usuario o contraseña invalidos');
     }
   };
 
@@ -45,16 +45,16 @@ export default function Login() {
             <h2>Ingresar a el Aplicativo</h2>
         </div>
         <div className='div-container'>
-          <label >Username:</label>
+          <label >Usuario:</label>
           <input className='form-input1' type="text" name="username" value={form.username} onChange={handleChange} />
         </div>
         <div className='div-container'>
-          <label >Password:</label>
+          <label >Contraseña:</label>
           <input className='form-input1' type="password" name="password" value={form.password} onChange={handleChange} />
         </div>
         <div className='div-container'>
-        {error && <p>{error}</p>}
-        <button className='main-button' type="submit">Login</button>
+        {error && <p className='error'>{error}</p>}
+        <button className='main-button' type="submit">Ingresar</button>
         </div>
       </form>
     </div>

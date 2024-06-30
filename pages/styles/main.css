@@ -203,3 +203,7 @@
         background-color: rgb(38, 52, 120);
         border-radius: 40px;
       }
+
+      .error{
+        color: #e11111;
+      }
